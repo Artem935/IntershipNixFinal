@@ -1,0 +1,85 @@
+﻿
+@using Domain.Models;
+@model Car
+
+
+
+
+
+<form method="post"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-3">
+                <div class="menu">
+                    <div class="row">
+                        <img src="~/img/Add/AddFoto.png" class='ImportFoto'></img>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12  col-md-9">
+                <div class="AddProduct">
+                    <div class="col-md-9">
+                        <input asp-for="Brand" type="text" placeholder='Brand' class='AddProductInput'/>
+                        <input asp-for="Model" type="text" placeholder='Model' class='AddProductInput'/>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="NameSelect">
+                            <div class="row">
+                                <div class="col-md-3">
+                                <p>Gearbox</p>
+                                </div>
+                                <div class="col-md-3">
+                                <p class="Fuel">Fuel</p>
+                                </div>
+                                <div class="col-md-3">
+                                <p class="Color">Color</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-9">
+                        <select asp-for="GearboxType" class="custom-select">
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Automatic">Automatic</option>
+                        </select>
+                        <select asp-for="FuelType"    class="custom-select">
+                            <option value="Petrol">Petrol</option>
+                            <option value="Disel">Disel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Gibrid">Gibrid</option>
+                        </select>
+                        <select asp-for="Color" class="custom-select" >
+                            <option value="Black">Black</option>
+                            <option value="Red">Red</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Green">Green</option>
+                        </select>
+                    </div>
+                    <input asp-for="GearboxType" type="number" placeholder='Year of issue' class='AddProductInput'/>
+                    <input asp-for="FuelType" type="number" placeholder='Year of issue' class='AddProductInput'/>
+                    <input asp-for="Color" type="number" placeholder='Year of issue' class='AddProductInput'/>
+                    <div class="col-md-9">
+                        <input asp-for="YearOfManufacture" type="number" placeholder='Year of issue' class='AddProductInput'/>
+                        <input asp-for="CarMileage" type="number" placeholder='Mileage' class='AddProductInput'/>
+                        <input asp-for="Price" type="number"  placeholder='Price $' class='AddProductInput' id="Price"/>
+
+                    </div>
+                    <div class="col-md-9">
+                        <p  class="AddDescriptionP">Description</p>
+                        <textarea asp-for="Description" cols="30" rows="3" class="AddDescription"></textarea>
+                    </div>
+                    <div class="col-md-9">
+                        <input class="AddButton" onclick="Listener" id="field" type="submit" value="Publish"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+

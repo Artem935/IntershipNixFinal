@@ -1,0 +1,24 @@
+﻿
+@model User
+
+<form method="post">
+    <div class="RegistrationWindow">
+        <input asp-for="UserName" type="text" placeholder='Login' class='RegistrateInput'/>
+        <input asp-for="Email" type="text" placeholder='Email' class='RegistrateInput'/>
+        <input asp-for="Password" type="password" placeholder='Password' class='RegistrateInput'/>
+        <input asp-for="ComfirmPassword" type="password" placeholder='ConfirmPassword' class='RegistrateInput'/>
+        <div class="row">
+            <button  type="Button"  class='LogInButton' >
+                <a asp-controller="Account" asp-action="Login">Login</a>
+            </button>
+            <input  type="submit"  class='RegButton' value='Registrate'/>
+        </div>
+    </div>
+</form>    
+
+
+
+
+@*Account/Registration*@
+
+

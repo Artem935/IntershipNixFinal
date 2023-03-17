@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <header class='header'>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" st>
+                <a  class="Logo" asp-controller="Home" asp-action="Index" >RENTCAR</a>
+                </div>
+                <div class="col-md-4 offset-md-4" >
+                    <div style="float:right;">
+                        <div class="BurgerMenu">
+                            <button  class='BurgerMenuButton' >Your Profile</button>
+                            <div class="DropdownContent">
+                                <a  asp-controller="Profile" asp-action="Main" > <img src="~/img/Header/Profile.png" class='IcoBurgerMenu1'/>Profile</a>
+                                <a> <img src="~/img/Header/News.png" class='IcoBurgerMenu'/> The news</a>
+                                <a> <img src="~/img/Header/Like.png" class='IcoBurgerMenu'/> Liked</a>
+                                <a> <img src="~/img/Header/Like.png" class='IcoBurgerMenu'/> Smt else</a>
+                                <a asp-controller="Account" asp-action="Logout"> <img src="~/img/Header/Logout.png" class='IcoBurgerMenu'/> Exit</a>
+                            </div>
+                        </div>
+                        <button   class='AddProductBut'  >
+                            <a asp-controller="Product" asp-action="AddCar" class='AddProductLink' >Add Product</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </header>

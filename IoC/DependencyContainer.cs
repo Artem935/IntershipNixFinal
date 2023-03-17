@@ -1,0 +1,25 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using Aplication.Interfaces;
+using Aplication.Services;
+using Domain.Interfaces;
+using Data.Repository;
+
+
+namespace IoC
+{
+    public class DependencyContainer
+    {
+        public static void RegisterServices(IServiceCollection services)
+        {
+            //Car
+            services.AddScoped<ICarServices, CarServices>();
+            services.AddScoped<ICarRepository, CarRepository>();
+
+/*            //User
+            services.AddScoped<IUserServices, UserServices>();
+            services.AddScoped<IUserRepository, UserRepository>();
+*/
+
+        }
+    }
+}

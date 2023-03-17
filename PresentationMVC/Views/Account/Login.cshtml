@@ -1,0 +1,23 @@
+﻿
+@model LoginViewModel
+
+
+<form method="post">
+    <div class="RegistrationWindow">
+        <input asp-for="UserName" type="text" placeholder='Email' class='RegistrateInput'/>
+        <input asp-for="Password" type="password" placeholder='Password' class='RegistrateInput'/>
+        <div class="row">
+            <input type="submit"  class='LogInButton' value='Login'/>
+            <button  type="Button"  class='RegButton' >
+                <a asp-controller="Account" asp-action="Registration">Registrate</a>
+            </button>
+        </div>
+    </div>
+</form>    
+
+
+
+
+@*Account/Login*@
+
+

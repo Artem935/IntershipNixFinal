@@ -1,0 +1,660 @@
+@font-face{
+
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+a:active, /* активна€/посещенна€ ссылка */
+a:hover, /* при наведении */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+header {
+    background-color: rgb(0, 82, 107);
+    padding: 1em;
+}
+
+
+    header .container {
+        height: 40px;
+        padding-right: 1.5%;
+    }
+
+    header .Logo,
+    header .Logo:active {
+        font-family: Nunito;
+        letter-spacing: 0.35em;
+        color: #e2e2e2;
+        font-size: 28px;
+        text-decoration: none;
+        transition: .5s linear;
+        font-weight: 500;
+    }
+
+        header .Logo:hover {
+            font-family: Nunito;
+            letter-spacing: 0.35em;
+            color: #ffffff;
+            font-size: 28.5px;
+            text-decoration: none;
+            transition: linear 2s;
+        }
+
+    header .ico {
+        border-radius: 50%;
+        width: 40px;
+    }
+
+    header .ul {
+        margin: 0;
+        padding: 15px;
+    }
+
+    header ul li {
+        display: inline;
+        margin-right: 5px;
+        border: 1px solid #e1e1e1;
+        padding: 3px;
+    }
+/*Register Form*/
+
+.RegistrationWindow {
+    margin-top: 100px;
+    width: 25%;
+    height: 20em;
+    margin-left: 37%;
+    background-color: rgb(213, 213, 213);
+    border-radius: 1em;
+}
+
+.RegistrateInput {
+    width: 80%;
+    height: 2em;
+    border-radius: 3px;
+    color: #8c8c8c;
+    background-color: #f2f2f2;
+    margin-top: 1.5em;
+    margin-left: 10%;
+    transition: 0.2s;
+    border: 0;
+    font-size: 18px;
+    border-bottom: 0.1em solid rgb(255, 255, 255);
+    outline: none;
+}
+
+.RegistrationWindow .RegButton,
+.RegistrationWindow .LogInButton {
+    width: 30%;
+    background-color: #f2f2f2;
+    margin-top: 1em;
+    margin-left: 20%;
+    font-size: 18px;
+    height: 40px;
+    border-radius: 5px;
+    border-width: 0;
+    color: #000000;
+}
+
+.RegistrationWindow .LogInButton {
+    margin-left: 10%;
+}
+
+.RegistrateInput::-webkit-input-placeholder {
+    color: #8c8c8c;
+}
+
+.RegistrateInput:focus {
+    color: #393c57;
+    border: 0;
+    border-color: #fff;
+    background-color: #f7f7f7;
+    border-bottom: 0.1em solid rgb(46, 46, 46);
+}
+/* End Register Form*/
+
+.BurgerMenu {
+    position: relative;
+    display: inline-block;
+}
+
+.BurgerMenuButton {
+    background-color: rgb(0, 82, 107);
+    font-size: 18px;
+    height: 40px;
+    border-radius: 5px;
+    color: #e2e2e2;
+    border: none;
+    transition: 1 s linear;
+    font-weight: 600;
+}
+
+.DropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 10em;
+    height: auto;
+    border-radius: 5px;
+}
+
+    .DropdownContent a {
+        color: black;
+        padding: 0.3em;
+        padding-left: 1em;
+        font-size: 16px;
+        text-decoration: none;
+        display: block;
+        border-radius: 5px;
+        font-weight: 600;
+    }
+
+        .DropdownContent a:hover {
+            background-color: #ddd;
+        }
+
+.BurgerMenu:hover .DropdownContent {
+    display: block;
+    transition: linear 3s;
+}
+
+.BurgerMenuButton:hover {
+    color: rgb(255, 255, 255);
+    transition: linear .5s;
+}
+
+.IcoBurgerMenu {
+    height: 100%;
+    width: 1em;
+    margin-right: 5px;
+}
+
+.IcoBurgerMenu1 {
+    height: 100%;
+    width: 1em;
+    margin-right: 8px;
+}
+
+
+
+.AddProductBut {
+    background-color: rgb(65, 141, 182);
+    margin-left: 1em;
+    font-size: 18px;
+    height: 40px;
+    border-radius: 5px;
+    color: #000000;
+    border: 5px;
+    border-color: red;
+    transition: 1 s linear;
+}
+
+.AddProductLink {
+    text-decoration: none;
+    color: #ffffff;
+    transition: .5s linear;
+}
+
+    .AddProductLink:hover {
+        text-decoration: none;
+        color: #000000;
+    }
+body {
+    background-color: #e6e6e6;
+}
+/*//////////////////////////////////////////////////////////*/
+main {
+    height: 100%;
+    background-color: #e6e6e6;
+    padding-bottom: 2em;
+}
+
+.menu {
+    margin-top: 1em;
+}
+
+    .menu .row .col-md-10 {
+        padding-right: 0;
+    }
+
+    .menu .row .col-md-2 {
+        padding-left: 0;
+    }
+
+    .menu .row p {
+        margin: 0;
+    }
+
+    .menu .MenuInput {
+        padding-left: 10px;
+        display: block;
+        width: 100%;
+        height: 2.3em;
+        border-radius: 5px;
+        border-width: 1px;
+    }
+
+        .menu .MenuInput::-webkit-outer-spin-button,
+        .menu .MenuInput::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+    .menu .Price p,
+    .menu .Mileage p,
+    .menu .Year p,
+    .menu .Transmission p,
+    .menu .Fuel p,
+    .menu .Color p {
+        font-family: Arial, Helvetica, sans-serif;
+        padding-top: 0.3em;
+        padding-bottom: 0.2em;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .menu .Price .col-md-1,
+    .menu .Mileage .col-md-1,
+    .menu .Year .col-md-1 {
+        margin: 0;
+        padding-left: 3px;
+        padding-top: 0.3em;
+        font-weight: 700;
+    }
+
+    .menu .Transmission .custom-select,
+    .menu .Fuel .custom-select,
+    .menu .Color .custom-select {
+        padding-left: 10px;
+        width: 100%;
+        height: 2.5em;
+        border-radius: 5px;
+        font-size: 17px;
+    }
+
+
+/* ///////////////////////////////////////// */
+.product .col-md-4 {
+    border-radius: 5px;
+    width: 31%;
+    margin-left: 1em;
+    margin-top: 1em;
+    background-color: rgb(255, 255, 255);
+}
+
+.product .CarFoto {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1em;
+}
+
+.product .IcoFoto {
+    width: 1.5em;
+}
+
+.product h5 {
+    text-align: center;
+    padding-top: 0.5em;
+}
+
+.product button {
+    float: right;
+    margin-bottom: 1em;
+}
+
+.product .Title {
+    font-size: 26px;
+    font-family: Geomanist,Arial,sans-serif;
+    padding-top: 0.1em;
+    margin: 0;
+}
+
+.product .ProductProperty {
+    padding-top: 1em;
+}
+
+.product .Price {
+    padding-top: 10px;
+    font-size: 18px;
+    font-family: Nunito;
+    font-weight: 600;
+    float: right;
+    padding-right: 1em;
+    color: #008337;
+}
+
+.product .LikeBtn {
+    max-width: 50%;
+    height: 2.5em;
+    margin-top: 100%;
+    margin-left: 65%;
+    display: block;
+    padding-top: 1em;
+}
+
+
+
+.AddProduct .AddProductInput {
+    width: 30%;
+    height: 2em;
+    font-size: 18px;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-left: 1em;
+    color: #8c8c8c;
+    background-color: #f2f2f2;
+    margin-top: 2em;
+    transition: 0.2s;
+    border: 0;
+    border-bottom: 0.1em solid #f2f2f2;
+    outline: none;
+}
+
+    .AddProduct .AddProductInput::-webkit-outer-spin-button,
+    .AddProduct .AddProductInput::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    .AddProduct .AddProductInput::-webkit-input-placeholder {
+        color: #8c8c8c;
+    }
+
+    .AddProduct .AddProductInput:focus {
+        color: #393c57;
+        border: 0;
+        border-color: #fff;
+        background-color: #ffffff;
+        border-bottom: 0.1em solid rgb(46, 46, 46);
+    }
+
+.AddProduct #Price {
+    color: #009f10;
+}
+
+.AddProduct .NameSelect {
+    margin-top: 1em;
+    font-size: 18px;
+}
+
+    .AddProduct .NameSelect p {
+        padding-left: 1em;
+        margin-bottom: 5px;
+    }
+
+    .AddProduct .NameSelect .Fuel {
+        padding-left: 32px;
+    }
+
+    .AddProduct .NameSelect .Color {
+        padding-left: 2.5em;
+    }
+
+.AddProduct .custom-select,
+.AddProduct .custom-select,
+.AddProduct .custom-select {
+    margin-left: 1em;
+    margin-top: 0;
+    padding-left: 10px;
+    width: 25%;
+    height: 2em;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    font-size: 18px;
+    border-width: 0;
+}
+
+.AddProduct .AddDescriptionP {
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.AddProduct .AddDescription {
+    font-family: Nunito;
+    font-size: 18px;
+    padding: 0.5em;
+    border-bottom: 0.1em solid #f2f2f2;
+    border-radius: 15px;
+    width: 90%;
+    height: 10em;
+    margin-left: 1em;
+    resize: none;
+    border-width: 0;
+}
+
+.AddProduct .AddButton {
+    margin-top: 1em;
+    margin-left: 1em;
+    background-color: #f2f2f2;
+    height: 2em;
+    width: 10em;
+    font-size: 18px;
+    border-radius: 5px;
+    border-width: 0;
+    float: left;
+}
+
+    .AddProduct .AddButton:hover {
+        background-color: #bdd7df;
+    }
+
+/* /////////////////////// */
+.Scroll .row {
+    padding-top: 1em;
+    padding-left: 10%;
+}
+
+.Scroll .col-md-1 {
+    padding: 0;
+    width: 2.5em;
+}
+
+.Scroll input {
+    font-size: 18px;
+    border-radius: 10px;
+    border: 0;
+    height: 2em;
+    width: 2em;
+    transition: linear .3s;
+}
+
+    .Scroll input:hover {
+        background-color: rgb(187, 219, 229);
+        transition: linear .3s;
+    }
+
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+/*////////////////////////////////////////////*/
+.CategoryBtn2,
+.SelectedCategoryBtn2,
+.SelectedCategoryBtn,
+.CategoryBtn {
+    width: 100px;
+}
+
+.YourAds {
+    color: #8c8c8c;
+    text-decoration: none;
+    font-family: Nunito;
+    font-size: 18px;
+    background-color: #e6e6e6;
+    margin: 0;
+    padding-top: 0.1em;
+}
+
+.CategoryBtn2 {
+    border: 0.2em solid #e6e6e6;
+    margin-top: 2em;
+    background-color: #e6e6e6;
+    padding-bottom: 0.5em;
+    color: #8c8c8c;
+    font-weight: 600;
+    transition: linear 0.2s;
+}
+
+.CategoryBtn {
+    border: 0.2em solid #e6e6e6;
+    margin-top: 2em;
+    margin-left: 1.5em;
+    background-color: #e6e6e6;
+    padding-bottom: 0.5em;
+    color: #8c8c8c;
+    font-weight: 600;
+    transition: linear 0.2s;
+}
+
+    .CategoryBtn:hover,
+    .CategoryBtn2:hover {
+        transition: linear 0.5s;
+        border-bottom: 0.15em solid rgb(46, 46, 46);
+        color: #000000;
+    }
+
+.YourAds:hover {
+    transition: linear 0.5s;
+    color: #000000;
+}
+
+.SelectedCategoryBtn {
+    border: 0.2em solid #e6e6e6;
+    margin-top: 2em;
+    margin-left: 1.5em;
+    background-color: #e6e6e6;
+    padding-bottom: 0.5em;
+    color: #8c8c8c;
+    font-weight: 600;
+    transition: linear 0.2s;
+    border-bottom: 0.15em solid rgb(46, 46, 46);
+    color: #000000;
+}
+
+.SelectedCategoryBtn2 {
+    border: 0.2em solid #e6e6e6;
+    margin-top: 2em;
+    background-color: #e6e6e6;
+    padding-bottom: 0.5em;
+    color: #8c8c8c;
+    font-weight: 600;
+    transition: linear 0.2s;
+    border-bottom: 0.15em solid rgb(46, 46, 46);
+    color: #000000;
+}
+/* Category END*/
+
+
+
+
+
+
+
+.Profile .col-md-9 {
+    border-radius: 5px;
+    width: 97.5%;
+    margin-left: 1em;
+    margin-top: 1em;
+    background-color: rgb(255, 255, 255);
+}
+
+.Profile .col-md-8 {
+    padding-left: 1em;
+}
+
+.Profile .CarFoto {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5em;
+    margin: 0;
+}
+
+.Profile .IcoFoto {
+    width: 1.5em;
+}
+
+.Profile h5 {
+    float: left;
+    padding-top: 0.5em;
+}
+
+.Profile button {
+    float: right;
+    margin-bottom: 1em;
+}
+
+.Profile .OrderSettings {
+    max-height: 100%;
+    max-width: 25px;
+    float: right;
+    margin-right: 0.5em;
+    padding-top: 0.5em;
+}
+
+.DescriptionBLock {
+    height: 5em;
+    overflow: hidden; /* ќбрезаем все, что не помещаетс€ в область */
+    text-overflow: ellipsis; /* ƒобавл€ем многоточие */
+}
+
+.Description {
+    height: 5em;
+    margin: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.5em;
+    text-align: left;
+}
+
+.DescriptionBLockNews {
+    height: 8.5em;
+    font-size: 17px;
+    padding-right: 2em;
+    overflow: scroll; /* ќбрезаем все, что не помещаетс€ в область */
+}
+
+.DescriptionNews {
+    height: 5em;
+    text-align: left;
+}
+
+.ImportFoto {
+    max-width: 100%;
+    border-radius: 15px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f2f2f2;
+    padding: 5em;
+    margin: 0;
+}
+
+    .ImportFoto:hover {
+        max-width: 100%;
+        border-radius: 15px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #dedede;
+        padding: 5em;
+        margin: 0;
+    }
+/*////////////////////////////////////////*/
