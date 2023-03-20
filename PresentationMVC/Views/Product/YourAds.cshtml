@@ -1,0 +1,75 @@
+﻿@using Domain.Models;
+@model HomeViewModel
+@Html.Partial("~/Views/Header/Header.cshtml")
+
+@Html.Partial("Category")
+
+@{
+    ViewData["Title"] = "Home Page";
+    Pager pager = new Pager();
+    int pageNo = 0;
+    var test = ViewBag.Pager;
+    if (test != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+<div class="container">
+    <div class="row">
+        @Html.Partial("~/Views/Home/Menu.cshtml")
+            <div class="col-12  col-md-9">
+                <div class="product">
+                    @foreach (var item in Model.Cars)
+                    {
+                        <div class="Profile">
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img class="CarFoto" src="~/img/Product/LogoNight.png" alt=""/>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p class='Title'>@item.Brand @item.Model</p>
+                                        <div class='DescriptionBLock'>
+                                            <p class='Description'>
+                                                @item.Description
+                                            </p>
+                                        </div>
+
+                                    </div> 
+                                    <div class="col-md-2">
+                                        <row>
+                                            <img class='OrderSettings' src="~/img/Profile/Delete.png"></img> 
+                                            <img class='OrderSettings' src="~/img/Profile/Edit.png"></img>
+                                        </row>
+
+                                    </div>    
+                                    <div class="col-md-2 offset-md-1">
+
+                                    </div> 
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+    </div>
+     <div class="col-md-6 offset-md-6">
+            <div class="Scroll">
+                <div class="row">
+                @if (pager.TotalPage > 0)
+                {
+                                <ul>
+                        @for (var i = pager.StartPage; i <= pager.EndPage; i++)
+                        {
+                                            <li class="page-item @(i == pager.CurrentPage ? "active" :"")" >
+                                                <a asp-route-page="@(@i)" type=""  >@i</a>
+                                            </li>
+                        }
+                                </ul>
+                }
+                </div>
+            </div>
+        </div>
+</div>

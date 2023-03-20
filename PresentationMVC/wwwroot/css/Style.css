@@ -1,7 +1,10 @@
 @font-face{
 
 }
-
+footer {
+    margin 1em;
+    width: 100%;
+}
 ::-webkit-scrollbar {
     width: 0px;
 }
@@ -13,8 +16,7 @@ a {
     color: black;
 }
 
-
-header {
+    header {
     background-color: rgb(0, 82, 107);
     padding: 1em;
 }
@@ -460,7 +462,7 @@ main {
     width: 2.5em;
 }
 
-.Scroll input {
+.Scroll button {
     font-size: 18px;
     border-radius: 10px;
     border: 0;
@@ -468,17 +470,16 @@ main {
     width: 2em;
     transition: linear .3s;
 }
+    .Scroll button .active {
+        background-color: rgb(187, 219, 229);
+    }
 
-    .Scroll input:hover {
+    .Scroll button:hover {
         background-color: rgb(187, 219, 229);
         transition: linear .3s;
     }
 
-footer {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
+
 
 
 /*////////////////////////////////////////////*/

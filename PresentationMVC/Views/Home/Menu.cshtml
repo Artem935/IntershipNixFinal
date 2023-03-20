@@ -1,101 +1,102 @@
-﻿
-@using Aplication.ViewModels;
-@model ViewShopModels
-<div class="col-12 col-md-3">
-    <div class="menu">
-        <div class="row">
-            <div class="col-md-10">
-                <input class="MenuInput" type="text" placeholder="Default input"/>
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-primary">Ico</button>
-            </div>
-        </div>
-        <div class="Price">
-            <div class="row">
-                <p>Price</p>
-                <div class="col-md-4 ">
-                    <input class="MenuInput" type="number" placeholder="Min"/>
-                </div>
-                <div class="col-md-1">
-                    <p>—</p>
-                </div>
-                <div class="col-md-4 ">
-                <input class="MenuInput" type="number" placeholder="Max"/>
-                </div>
-            </div>
-        </div>
-        <div class="Mileage">
-            <div class="row">
+﻿@model HomeViewModel
 
-                <p>Mileage</p>
-                <div class="col-md-4 ">
-                    <input class="MenuInput" type="number" placeholder="Min"/>
+
+    <div class="col-12 col-md-3">
+
+                <div class="menu">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <input asp-for="Menu.Searc" value="@Model.Menu.Searc" class="MenuInput" type="text" placeholder="Default input"/>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary">Ico</button>
+                        </div>
+                    </div>
+                    <div class="Price">
+                        <div class="row">
+                            <p>Price</p>
+                            <div class="col-md-4 ">
+                                <input asp-for="Menu.PriceMin" value="@Model.Menu.PriceMin" class="MenuInput" type="number" placeholder="Min"/>
+                            </div>
+                            <div class="col-md-1">
+                                <p>—</p>
+                            </div>
+                            <div class="col-md-4 ">
+                            <input asp-for="Menu.PriceMax" value="@Model.Menu.PriceMax"  class="MenuInput" type="number" placeholder="Max"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Mileage">
+                        <div class="row">
+
+                            <p>Mileage</p>
+                            <div class="col-md-4 ">
+                                <input  asp-for="Menu.MileageMin" value="@Model.Menu.MileageMin" class="MenuInput" type="number" placeholder="Min"/>
+                            </div>
+                            <div class="col-md-1">
+                                —
+                            </div>
+                            <div class="col-md-4 ">
+                            <input asp-for="Menu.MileageMax" value="@Model.Menu.MileageMax"  class="MenuInput" type="number" placeholder="Max"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Year">
+                        <div class="row">
+                            <p>Year</p>
+                            <div class="col-md-4 ">
+                                <input asp-for="Menu.YearMin" value="@Model.Menu.YearMin"  class="MenuInput" type="number" placeholder="Min"/>
+                            </div>
+                            <div class="col-md-1">
+                                —
+                            </div>
+                            <div class="col-md-4 ">
+                            <input asp-for="Menu.YearMax" value="@Model.Menu.YearMax" class="MenuInput" type="number" placeholder="Max"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Transmission">
+                        <div class="row">
+                            <p>GearboxType</p>
+                            <div class="col-md-12 ">
+                                <select asp-for="Menu.GearboxType" value="@Model.Menu.GearboxType" class="custom-select">
+                                <option value="All">All</option>
+                                <option value="Mechanic">Mechanic</option>
+                                <option value="Automatic">Automatic</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Fuel">
+                        <div class="row">
+                            <p>Fuel</p>
+                            <div class="col-md-12 ">
+                                <select asp-for="Menu.Fuel" value="@Model.Menu.Fuel"  class="custom-select">
+                                <option value="All">All</option>
+                                <option value="Petrol">Petrol</option>
+                                <option value="Disel">Disel</option>
+                                <option value="Electric">Electric</option>
+                                <option value="Gibrid">Gibrid</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Color">
+                        <div class="row">
+                            <p>Color</p>
+                            <div  class="col-md-12 ">
+                                <select asp-for="Menu.Color" value="@Model.Menu.Color"  class="custom-select">
+                                <option value="All">All</option>
+                                <option value="Petrol">Black</option>
+                                <option value="Disel">Red</option>
+                                <option value="Electric">Pink</option>
+                                <option value="Gibrid">Green</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-1">
-                    —
-                </div>
-                <div class="col-md-4 ">
-                <input class="MenuInput" type="number" placeholder="Max"/>
-                </div>
-            </div>
-        </div>
-        <div class="Year">
-            <div class="row">
-                <p>Year</p>
-                <div class="col-md-4 ">
-                    <input class="MenuInput" type="number" placeholder="Min"/>
-                </div>
-                <div class="col-md-1">
-                    —
-                </div>
-                <div class="col-md-4 ">
-                <input class="MenuInput" type="number" placeholder="Max"/>
-                </div>
-            </div>
-        </div>
-        <div class="Transmission">
-            <div class="row">
-                <p>Transmission</p>
-                <div class="col-md-12 ">
-                    <select class="custom-select">
-                    <option value="All">All</option>
-                    <option value="Mechanic">Mechanic</option>
-                    <option value="Automatic">Automatic</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="Fuel">
-            <div class="row">
-                <p>Fuel</p>
-                <div class="col-md-12 ">
-                    <select class="custom-select">
-                    <option value="All">All</option>
-                    <option value="Petrol">Petrol</option>
-                    <option value="Disel">Disel</option>
-                    <option value="Electric">Electric</option>
-                    <option value="Gibrid">Gibrid</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="Color">
-            <div class="row">
-                <p>Color</p>
-                <div class="col-md-12 ">
-                    <select class="custom-select">
-                    <option value="All">All</option>
-                    <option value="Petrol">Black</option>
-                    <option value="Disel">Red</option>
-                    <option value="Electric">Pink</option>
-                    <option value="Gibrid">Green</option>
-                    </select>
-                </div>
-            </div>
-        </div>
     </div>
-</div>
 
 
 

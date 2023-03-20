@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+        pager = ViewBag.Pager;
+    pageNo = pager.CurrentPage;
+}
+
+@if (pager.TotalPage > 0)
+{
+    @for (var i = pager.StartPage; i <= pager.EndPage; i++)
+    {
+        <div class="col-md-1" >
+            <input  asp-action="Index" asp-controller="Home" type="button" value="@i"/>
+        </div>
+    }
+}

@@ -18,8 +18,5 @@ namespace Domain.Models
         public string FuelType { get; set; }
         public string GearboxType { get; set; }
         public string Description { get; set; }
-        
-        
-
     }
 }

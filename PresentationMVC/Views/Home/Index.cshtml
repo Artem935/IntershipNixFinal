@@ -1,14 +1,27 @@
-﻿@{
+﻿@model HomeViewModel
+@{
     ViewData["Title"] = "Home Page";
+    Pager pager = new Pager();
+    int pageNo = 0;
+    var test = ViewBag.Pager;
+    if (test != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
 }
 @Html.Partial("~/Views/Header/Header.cshtml")
 <div class="container">
+    <form method="get">
     <div class="row">
         @Html.Partial("Menu")
         <div class="col-12  col-md-9">
             <div class="product">
                 <div class="row">
-                    @Html.Partial("Product")
+                    <div class="ProductBlock">
+                        @Html.Partial("Product")
+                    </div>
+                    
                 </div>
                 <div class="row">
 
@@ -18,24 +31,21 @@
         <div class="col-md-6 offset-md-6">
             <div class="Scroll">
                 <div class="row">
-                    <div class="col-md-1" >
-                        <input  type="button" value='1'/>
-                    </div>
-                    <div class="col-md-1">
-                        <input type="button" value='2'/>
-                    </div>
-                    <div class="col-md-1">
-                        <input type="button" value='3'/>
-                    </div>
-                    <div class="col-md-1">
-                        <input type="button" value='4'/>
-                    </div>
-                    <div class="col-md-1">
-                        <input type="button" value='5'/>
-                    </div>
+                        @if (pager.TotalPage > 0)
+                        {
+                            <ul>
+                                @for (var i = pager.StartPage; i <= pager.EndPage; i++)
+                                {
+                                    <li class="page-item @(i == pager.CurrentPage ? "active" :"")" >
+                                        <a asp-route-page="@(@i)" type=""  >@i</a>
+                                    </li>
+                                }
+                            </ul>
+                        }
                 </div>
             </div>
         </div>
     </div>
+    </form>
 </div>
 

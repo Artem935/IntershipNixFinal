@@ -1,66 +1,67 @@
 ﻿
-@using Aplication.ViewModels;
-@model ViewShopModels
-    @foreach (var item in Model.Cars)
-    {
-        <div class="Profile">
-            <div class="col-md-9">
-                <div class="row" >
-                    <div class="col-md-3">
-                        <a ><img class="CarFoto" src="~/img/Product/LogoNight.png"alt=""/> </a>   
-                    </div>
-                    <div class="col-md-7" >
-                        <p class="Title">@item.Model</p>
-                        <div class='ProductProperty'>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="row">
-                                        <div class="col-md-2" >
-                                            <img class="IcoFoto" src="~/img/Product/Distance.png" alt="wwfwf"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                                <p>@item.CarMileage k km</p>
-                                        </div>
+
+@foreach (var item in Model.Cars)
+{
+    <div class="Profile">
+        <div class="col-md-9">
+            <div class="row" >
+                <div class="col-md-3">
+                    <a ><img class="CarFoto" src="~/img/Product/LogoNight.png"alt=""/> </a>   
+                </div>
+                <div class="col-md-7" >
+                    <p class="Title">@item.Model</p>
+                    <div class='ProductProperty'>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-2" >
+                                        <img class="IcoFoto" src="~/img/Product/Distance.png" alt="wwfwf"/>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-2" >
-                                            <img class="IcoFoto" src="~/img/Product/Fuel.png" alt="wwfwf"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <p>@item.FuelType</p>
-                                        </div>
+                                    <div class="col-md-8">
+                                            <p>@item.CarMileage k km</p>
                                     </div>
                                 </div>
-                                <div class="col-md-5">
-                                    <div class="row">
-                                        <div class="col-md-2" >
-                                                <img class="IcoFoto" src="~/img/Product/Transmission.png" alt="wwfwf"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <p>@item.GearboxType</p>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-md-2" >
+                                        <img class="IcoFoto" src="~/img/Product/Fuel.png" alt="wwfwf"/>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-2" >
-                                                <img class="IcoFoto" src="~/img/Product/V.png" alt="wwfwf"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <p>2.5</p>
-                                        </div>
+                                    <div class="col-md-8">
+                                        <p>@item.FuelType</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-2" >
+                                            <img class="IcoFoto" src="~/img/Product/Transmission.png" alt="wwfwf"/>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>@item.GearboxType</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2" >
+                                            <img class="IcoFoto" src="~/img/Product/V.png" alt="wwfwf"/>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <p>2.5</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> 
-                    <div class="col-md-2">
-                            <p class= "Price">20 000$</p>
-                            <br/>
-                                <img class="LikeBtn" src="~/img/Product/like.png"></img>
-                    </div>    
-                </div>
+                    </div>
+                </div> 
+                <div class="col-md-2">
+                        <p class= "Price"> @Math.Round(item.Price,0) $</p>
+                    <br/>
+                    <img class="LikeBtn" src="~/img/Product/like.png"></img>
+                </div>    
             </div>
         </div>
-    }
+    </div>
+    
+}
+
 
 
 
