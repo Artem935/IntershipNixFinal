@@ -4,4 +4,5 @@
 // Write your JavaScript code.
 function Listener() {
     console.log(document.getELementById("field").value)
+    alert("Ok")
 }

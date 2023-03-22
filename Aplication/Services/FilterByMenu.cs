@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Data.Repository
 {
-    public class SortingByMenu : ISortingByMenuRepository
+    public class FilterByMenu : ISortingByMenuRepository
     {
-        public IEnumerable<Car> Sorting(IEnumerable<Car> cars, Menu menu)
+        public IEnumerable<Car> CarFilter(IEnumerable<Car> cars, Menu menu)
         {
             if (menu.Searc is not null)
                 cars = cars.Where(p => p.Brand.Contains(menu.Searc) || p.Model.Contains(menu.Searc));

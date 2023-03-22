@@ -6,11 +6,13 @@ namespace PresentationMVC.Models
     {
         public IEnumerable<Car> Cars { get; set; }
         public Menu Menu { get; set; }
-
-        public HomeViewModel(IEnumerable<Car> cars , Menu menu) 
+        public Pager Pager { get; set; }
+        public HomeViewModel(){}
+        public HomeViewModel(IEnumerable<Car> cars , Menu menu, Pager pager) 
         {
             Cars = cars;
             Menu = menu;
+            Pager = pager;
         }
 
     }

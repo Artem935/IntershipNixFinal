@@ -23,5 +23,15 @@ namespace Aplication.Services
                 Cars = _carRepository.GetCar()
             };
         }
+
+        public void Remove(Car car)
+        {
+            _carRepository.Remove(car);
+        }
+
+        public void Overwriting(Car car)
+        {
+            _carRepository.Overwriting(car);
+        }
     }
 }

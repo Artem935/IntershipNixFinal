@@ -6,5 +6,8 @@ namespace Domain.Interfaces
     {
         IEnumerable<Car> GetCar();
         public void Add(Car car);
+        public void Remove(Car car);
+
+        public void Overwriting(Car car);
     }
 }

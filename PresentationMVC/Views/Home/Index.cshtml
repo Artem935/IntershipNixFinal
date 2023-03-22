@@ -1,15 +1,5 @@
 ﻿@model HomeViewModel
-@{
-    ViewData["Title"] = "Home Page";
-    Pager pager = new Pager();
-    int pageNo = 0;
-    var test = ViewBag.Pager;
-    if (test != null)
-    {
-        pager = ViewBag.Pager;
-        pageNo = pager.CurrentPage;
-    }
-}
+
 @Html.Partial("~/Views/Header/Header.cshtml")
 <div class="container">
     <form method="get">
@@ -31,16 +21,15 @@
         <div class="col-md-6 offset-md-6">
             <div class="Scroll">
                 <div class="row">
-                        @if (pager.TotalPage > 0)
+                        @if (Model.Pager.TotalPage > 0)
                         {
-                            <ul>
-                                @for (var i = pager.StartPage; i <= pager.EndPage; i++)
+                                @for (var i = Model.Pager.StartPage; i <= Model.Pager.EndPage; i++)
                                 {
-                                    <li class="page-item @(i == pager.CurrentPage ? "active" :"")" >
-                                        <a asp-route-page="@(@i)" type=""  >@i</a>
-                                    </li>
+                                    <div class="col-md-1" >
+                                                  <input onclick="Listener" name="page" type="submit" value="@i" />
+                                    </div>
+                                              
                                 }
-                            </ul>
                         }
                 </div>
             </div>

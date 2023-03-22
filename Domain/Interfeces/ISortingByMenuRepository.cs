@@ -10,6 +10,6 @@ namespace Domain.Interfeces
 {
     public interface ISortingByMenuRepository
     {
-        public IEnumerable<Car> Sorting(IEnumerable<Car> cars, Menu menu);
+        public IEnumerable<Car> CarFilter(IEnumerable<Car> cars, Menu menu);
     }
 }

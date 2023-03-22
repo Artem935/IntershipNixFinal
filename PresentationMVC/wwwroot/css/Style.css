@@ -21,7 +21,9 @@ a {
     padding: 1em;
 }
 
-
+.DeliteInput {
+    background: url(../img/Profile/Delete.png) no-repeat center left;
+}
     header .container {
         height: 40px;
         padding-right: 1.5%;
@@ -462,7 +464,7 @@ main {
     width: 2.5em;
 }
 
-.Scroll button {
+.Scroll input {
     font-size: 18px;
     border-radius: 10px;
     border: 0;
@@ -470,11 +472,11 @@ main {
     width: 2em;
     transition: linear .3s;
 }
-    .Scroll button .active {
+    .Scroll input .active {
         background-color: rgb(187, 219, 229);
     }
 
-    .Scroll button:hover {
+    .Scroll input:hover {
         background-color: rgb(187, 219, 229);
         transition: linear .3s;
     }
@@ -601,19 +603,32 @@ main {
     margin-bottom: 1em;
 }
 
-.Profile .OrderSettings {
-    max-height: 100%;
-    max-width: 25px;
+.Profile .OrderSettingsDelite,
+.Profile .OrderSettingsEdit {
+    margin-top: 10px;
     float: right;
-    margin-right: 0.5em;
-    padding-top: 0.5em;
+    margin-right: 10px;
+    padding-top: 10px;
+    width: 30px;
+    height: 55px;
+    background-image: url(../img/Profile/Delete.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    border-width: 0;
+    background-color: white;
+    font-size: 14px;
+    color: white;
 }
 
-.DescriptionBLock {
-    height: 5em;
-    overflow: hidden; /* Обрезаем все, что не помещается в область */
-    text-overflow: ellipsis; /* Добавляем многоточие */
+.Profile .OrderSettingsEdit {
+    background-image: url(../img/Profile/Edit.png);
 }
+
+    .DescriptionBLock {
+        height: 5em;
+        overflow: hidden; /* Обрезаем все, что не помещается в область */
+        text-overflow: ellipsis; /* Добавляем многоточие */
+    }
 
 .Description {
     height: 5em;

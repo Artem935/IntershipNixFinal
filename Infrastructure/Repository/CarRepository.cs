@@ -23,5 +23,16 @@ namespace Data.Repository
             return _context.Cars;
         }
 
+        public void Overwriting(Car car)
+        {
+            _context.Update(car);
+            _context.SaveChanges();
+        }
+
+        public void Remove(Car car)
+        {
+            _context.Remove(car);
+            _context.SaveChanges();
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿namespace PresentationMVC.Models
-{
+{ 
     public class Pager
     {
         public int TotalItems { get; set; }
@@ -13,9 +13,9 @@
         public Pager() { }
         public Pager(int totalItems, int page, int pageSize = 3)
         {
-            int totalPages = (int)Math.Ceiling((decimal)totalItems/(decimal)pageSize);
+            int totalPages = (int)Math.Ceiling((decimal)totalItems / (decimal)pageSize);
             int currentPage = page;
-            int startPage = currentPage -5;
+            int startPage = currentPage - 5;
             int endPage = currentPage + 4;
             if (startPage <= 0)
             {
@@ -34,10 +34,10 @@
             CurrentPage = currentPage;
             StartPage = startPage;
             EndPage = endPage;
-            PageSize= pageSize;
+            PageSize = pageSize;
             TotalPage = totalPages;
         }
 
-        
+
     }
 }
