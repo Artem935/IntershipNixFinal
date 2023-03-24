@@ -2,15 +2,15 @@
 @model LoginViewModel
 
 
-<form method="post">
-    <div class="RegistrationWindow">
-        <input asp-for="UserName" type="text" placeholder='Email' class='RegistrateInput'/>
-        <input asp-for="Password" type="password" placeholder='Password' class='RegistrateInput'/>
+<form method="post" >
+    <div class="RegistrationWindow" style="height:290px; margin-top:9%;" >
+        <input asp-for="UserName" type="text" placeholder='Login' class='RegistrateInput1' />
+        <input asp-for="Password" type="password" placeholder='Password' class='RegistrateInput1'/>
         <div class="row">
-            <input type="submit"  class='LogInButton' value='Login'/>
-            <button  type="Button"  class='RegButton' >
-                <a asp-controller="Account" asp-action="Registration">Registrate</a>
-            </button>
+            <input type="submit"  class='LogInButton' value='Login' />
+           <form method="get" action="../Views/Account/Registration.cshtml">
+                  <input type="submit" asp-controller="Account" asp-action="Registration"   class='LogInButton' value='Registration'/>
+           </form>
         </div>
     </div>
 </form>    

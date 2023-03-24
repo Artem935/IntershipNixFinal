@@ -16,6 +16,7 @@ namespace Data.Repository
         public void Add(Car car)
         {
             _context.Add(car);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Car> GetCar()

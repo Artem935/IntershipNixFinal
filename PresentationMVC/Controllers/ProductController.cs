@@ -5,9 +5,12 @@ using Aplication.Services;
 using Data.Context;
 using PresentationMVC.Models;
 using Data.Repository;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
 
 namespace PresentationMVC.Controllers
 {
+
     public class ProductController : Controller
     {
         private ShopDbContext _context;
@@ -23,12 +26,17 @@ namespace PresentationMVC.Controllers
         [HttpGet]
         public IActionResult AddCar()
         {
+            if (HttpContext.Session.GetString("UserId") == null)
+                return RedirectToAction("Login", "Account");
             return View();
-         }
+        }
 
         [HttpPost]
         public IActionResult AddCar(Car car)
         {
+            if (HttpContext.Session.GetString("UserId") == null)
+                return RedirectToAction("Login", "Account");
+            car.UserId = HttpContext.Session.GetString("UserId");
             if (ModelState.IsValid)
             {
                 _carService.Add(car);
@@ -47,6 +55,10 @@ namespace PresentationMVC.Controllers
         }
         public IActionResult YourAds(Menu menu, int page,int carDelite, int carEdit)
         {
+            if (HttpContext.Session.GetString("UserId") == null)
+                return RedirectToAction("Login", "Account");
+
+            string UserId = HttpContext.Session.GetString("UserId");
             int pageSize = 3; // количество объектов на страницу
             if (page < 1)
                 page = 1;
@@ -55,8 +67,7 @@ namespace PresentationMVC.Controllers
             int recsCount = cars.Count();
             var pager = new Pager(recsCount, page, pageSize);
             int recSkip = (page - 1) * pageSize;
-            cars = cars.Skip(recSkip).Take(pager.PageSize);
-            ViewBag.Pager = page;
+            cars = cars.Skip(recSkip).Take(pager.PageSize).Where(p => p.UserId == UserId);
             HomeViewModel ivn = new HomeViewModel(cars, menu, pager);
             if (carDelite != 0)
             {
@@ -78,6 +89,7 @@ namespace PresentationMVC.Controllers
         {
             if (save == "Save Edits") 
             {
+                car.UserId = HttpContext.Session.GetString("UserId");
                 _carService.Overwriting(car);
                 return Redirect("../YourAds");
             }

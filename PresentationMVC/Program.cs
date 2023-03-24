@@ -39,7 +39,7 @@ internal class Program
             };
         });
         builder.Services.AddAuthorization();
-
+        builder.Services.AddSession();
 
         RegisterServices(builder.Services);
        
@@ -55,11 +55,10 @@ internal class Program
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
-
         app.UseRouting();
         app.UseAuthentication();
         app.UseAuthorization();
-        
+        app.UseSession();
 
         app.MapControllerRoute(
             name: "default",

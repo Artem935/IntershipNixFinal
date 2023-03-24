@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Data.Context
 {
@@ -7,6 +8,8 @@ namespace Data.Context
     {
         public ShopDbContext(DbContextOptions<ShopDbContext> options) : base(options)
         {
+            /*Database.EnsureCreated();*/
+            /*Database.EnsureDeleted();*/
         }
         public DbSet<Car> Cars { get; set; }
     }

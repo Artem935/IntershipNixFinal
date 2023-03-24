@@ -1,0 +1,61 @@
+﻿
+@model ProductOwerviewModel
+@foreach (var item in Model.Car)
+{
+             <div class="container">
+                <div class="row">            
+                    <div class="col-12 col-md-3">
+                        <div class="menu">
+                            <div class="row">
+                                    <img src="~/img/Add/AddFoto.png" class='ImportFoto'></img>                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12  col-md-9">
+                        <div class="AddProduct">
+                            <div class="col-md-9">
+                                        <input  value="@item.Brand"  class='ProductOwerview'/>
+                                        <input  value="@item.Model"   class='ProductOwerview'/>
+                                
+                            </div>
+                            <div class="col-md-9">
+                                <div class="NameSelect">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                        <p>Gearbox</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                        <p class="Fuel">Fuel</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                        <p class="Color">Color</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                            <input readonly value="@item.GearboxType" class='ProductOwerview'/>
+                                            <input readonly value="@item.FuelType"  class='ProductOwerview'/>
+                                            <input readonly value="@item.Color"  class='ProductOwerview'/>
+                            </div>
+                            <div class="col-md-9">
+                                        <input readonly value="@item.YearOfManufacture"  class='ProductOwerview'/>
+                                            <input readonly value="@item.CarMileage"  class='ProductOwerview'/>
+                                            <input readonly value="@item.Price $"  class='ProductOwerview' id="Price"/>
+
+                            </div>
+                            <div class="col-md-9">
+                                <p  class="AddDescriptionP">Description</p>
+                                    <textarea readonly value="@item.Description " cols="30" rows="3" class="AddDescription"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+}
+
+
+
+

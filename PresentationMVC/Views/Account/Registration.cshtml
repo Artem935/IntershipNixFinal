@@ -1,24 +1,51 @@
 ﻿
 @model User
 
+
 <form method="post">
     <div class="RegistrationWindow">
-        <input asp-for="UserName" type="text" placeholder='Login' class='RegistrateInput'/>
-        <input asp-for="Email" type="text" placeholder='Email' class='RegistrateInput'/>
-        <input asp-for="Password" type="password" placeholder='Password' class='RegistrateInput'/>
-        <input asp-for="ComfirmPassword" type="password" placeholder='ConfirmPassword' class='RegistrateInput'/>
-        <div class="row">
-            <button  type="Button"  class='LogInButton' >
-                <a asp-controller="Account" asp-action="Login">Login</a>
-            </button>
-            <input  type="submit"  class='RegButton' value='Registrate'/>
+                <div class="row">
+                    <div class="col-md-5 offset-md-1">
+                        <input  asp-for="Name"  class='RegistrateInput' type="text" placeholder='Name'/>
+                    </div>
+                    <div class="col-md-5 ">
+                        <input  asp-for="Surname" class='RegistrateInput' type="text" placeholder='Surname' />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 offset-md-1">
+                        <input asp-for="PhoneNumber" class='RegistrateInput' type="number" placeholder='Fone number'/>
+                    </div>
+                    <div class="col-md-5 ">
+                        <input asp-for="date" class='RegistrateInput' type="date"  />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 offset-md-1">
+                    <input class='RegistrateInput' asp-for="Email" type="text" placeholder='Email' />                    
+
+                    </div>
+                    <div class="col-md-5 ">
+                    <input class='RegistrateInput'  asp-for="UserName" type="text" placeholder='Login' />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 offset-md-1">
+                        <input class='RegistrateInput'  asp-for="Password" type="password" placeholder='Password' />
+                    </div>
+                    <div class="col-md-5 ">
+                        <input class='RegistrateInput' asp-for="ComfirmPassword" type="password" placeholder='ConfirmPassword' />
+                    </div>
+                </div>
+                        <div class="row">
         </div>
+                <input type="submit"  class='RegButton' value='Registrate'/>
+                <form method="get" action="../Views/Account/Login.cshtml">
+                    <input type="submit" asp-controller="Account" asp-action="Login"  class='LogInButton' value='Login'/>
+                </form>
+                
     </div>
-</form>    
-
-
-
-
+</form>
 @*Account/Registration*@
 
 

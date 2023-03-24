@@ -1,4 +1,5 @@
-﻿namespace PresentationMVC.Models
+﻿
+namespace Domain.Models
 {
     public class Menu
     {
@@ -11,6 +12,6 @@
         public int? YearMax { get; set; }
         public string? GearboxType { get; set; }
         public string? Fuel { get; set; }
-        public string? Color { get; set;}
+        public string? Color { get; set; }
     }
 }

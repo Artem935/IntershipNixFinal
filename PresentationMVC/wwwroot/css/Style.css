@@ -2,11 +2,23 @@
 
 }
 footer {
+
     margin 1em;
     width: 100%;
 }
 ::-webkit-scrollbar {
     width: 0px;
+}
+
+.product .ProdutBrandBnt {
+    float: left;
+    margin-top:0em;
+    margin-bottom:0;
+    height:35px;
+    padding-bottom:2px;
+    border-width:0;
+    background-color:white;
+    padding-left:0;
 }
 
 a:active, /* активная/посещенная ссылка */
@@ -49,10 +61,10 @@ a {
             transition: linear 2s;
         }
 
-    header .ico {
-        border-radius: 50%;
-        width: 40px;
-    }
+header .ico {
+    border-radius: 50%;
+    width: 40px;
+}
 
     header .ul {
         margin: 0;
@@ -68,22 +80,46 @@ a {
 /*Register Form*/
 
 .RegistrationWindow {
-    margin-top: 100px;
-    width: 25%;
-    height: 20em;
-    margin-left: 37%;
-    background-color: rgb(213, 213, 213);
+    margin-top: 9%;
+    width: 30%;
+    height: 400px;
+    margin-left: 34%;
+    background-color: rgb(139, 173, 208);
     border-radius: 1em;
 }
 
-.RegistrateInput {
+.RegistrationWindow .RegButton,
+.RegistrationWindow .LogInButton {
     width: 80%;
+    background-color: #f2f2f2;
+    margin-top: 1em;
+    margin-left: 20%;
+    font-size: 19px;
+    height: 40px;
+    font-weight: 500;
+    border-radius: 5px;
+    border-width: 0;
+    color: #000000;
+    transition: 0.5s linear;
+    margin-left: 10%;
+}
+
+.RegistrationWindow .RegButton:hover,
+.RegistrationWindow .LogInButton:hover {
+    color: rgb(231, 231, 231);
+    background-color: #766db4;
+    transition: 0.5s linear;
+}
+.RegistrateInput,
+.RegistrateInput1 {
+    padding-left: 0.5em;
+    width: 91%;
+    margin-left: 4%;
     height: 2em;
     border-radius: 3px;
     color: #8c8c8c;
     background-color: #f2f2f2;
     margin-top: 1.5em;
-    margin-left: 10%;
     transition: 0.2s;
     border: 0;
     font-size: 18px;
@@ -91,34 +127,24 @@ a {
     outline: none;
 }
 
-.RegistrationWindow .RegButton,
-.RegistrationWindow .LogInButton {
-    width: 30%;
-    background-color: #f2f2f2;
-    margin-top: 1em;
-    margin-left: 20%;
-    font-size: 18px;
-    height: 40px;
-    border-radius: 5px;
-    border-width: 0;
-    color: #000000;
+.RegistrateInput1 {
+    width: 83%;
+    margin-left: 8.5%;
 }
 
-.RegistrationWindow .LogInButton {
-    margin-left: 10%;
-}
+    .RegistrationWindow .RegistrateInput::-webkit-input-placeholder,
+    .RegistrationWindow .RegistrateInput::-webkit-inner-spin-button {
+        color: #8c8c8c;
+        -webkit-appearance: none;
+    }
 
-.RegistrateInput::-webkit-input-placeholder {
-    color: #8c8c8c;
-}
-
-.RegistrateInput:focus {
-    color: #393c57;
-    border: 0;
-    border-color: #fff;
-    background-color: #f7f7f7;
-    border-bottom: 0.1em solid rgb(46, 46, 46);
-}
+    .RegistrationWindow .RegistrateInput:focus {
+        color: #393c57;
+        border: 0;
+        border-color: #fff;
+        background-color: #f7f7f7;
+        border-bottom: 0.1em solid rgb(46, 46, 46);
+    }
 /* End Register Form*/
 
 .BurgerMenu {
@@ -281,7 +307,48 @@ main {
         font-size: 17px;
     }
 
-
+.EditProfile{
+    padding-top:5%;
+}
+.EditProfile .EditProfileInput {
+        width: 70%;
+        height: 2em;
+        margin-left:4%;
+        font-size: 18px;
+        border-radius: 3px;
+        padding-left: 10px;
+        color: #8c8c8c;
+        background-color: #f2f2f2;
+        margin-top: 1em;
+        transition: 0.2s;
+        border: 0;
+        border-bottom: 0.1em solid #f2f2f2;
+        outline: none;
+}
+    .EditProfile .EditProfileInput:focus {
+        transition: 0.2s;
+        color: #393c57;
+        border: 0;
+        border-color: #fff;
+        background-color: #ffffff;
+        border-bottom: 0.1em solid rgb(46, 46, 46);
+    }
+    .EditProfile .AddButton {
+        margin-top: 1.5em;
+        margin-left: 1.2em;
+        background-color: #f2f2f2;
+        height: 2em;
+        width: 70%;
+        font-size: 18px;
+        border-radius: 5px;
+        border-width: 0;
+        float: left;
+        transition: 1s;
+    }
+        .EditProfile .AddButton:hover {
+            transition: 2s;
+            background-color: #bdd7df;
+        }
 /* ///////////////////////////////////////// */
 .product .col-md-4 {
     border-radius: 5px;
@@ -346,7 +413,7 @@ main {
 
 
 
-.AddProduct .AddProductInput {
+.AddProduct .AddProductInput, .ProductOwerview {
     width: 30%;
     height: 2em;
     font-size: 18px;
@@ -361,19 +428,24 @@ main {
     border-bottom: 0.1em solid #f2f2f2;
     outline: none;
 }
+.ProductOwerview {
+    margin-top:1em ;
+}
+.AddProduct .AddProductInput::-webkit-outer-spin-button,
+.AddProduct .AddProductInput::-webkit-inner-spin-button,
+.ProductOwerview::-webkit-outer-spin-button,
+.ProductOwerview::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 
-    .AddProduct .AddProductInput::-webkit-outer-spin-button,
-    .AddProduct .AddProductInput::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    }
+.AddProduct .AddProductInput::-webkit-input-placeholder,
+.ProductOwerview::-webkit-input-placeholder {
+    color: #8c8c8c;
+}
 
-    .AddProduct .AddProductInput::-webkit-input-placeholder {
-        color: #8c8c8c;
-    }
-
-    .AddProduct .AddProductInput:focus {
+    .AddProduct .AddProductInput:focus{
         color: #393c57;
         border: 0;
         border-color: #fff;

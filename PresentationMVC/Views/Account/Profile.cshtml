@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+
+@model IdentityUser
+
+
+@Html.Partial("~/Views/Header/Header.cshtml")
+<div class="container">
+    @*@Html.Partial("Category")*@
+    <form method="post"> 
+        <div class="row">            
+            <div class="col-12   " >
+                <div class="EditProfile">
+                    <div class="col-md-5 offset-md-4">
+                        <input asp-for="UserName" type="text" placeholder='login' value="@Model.UserName" class='EditProfileInput'/>
+                        <input asp-for="Email" type="text" placeholder='Email' value="@Model.Email" class='EditProfileInput'/>
+                        <input asp-for="PhoneNumber" type="text" placeholder='PhoneNumber' value="@Model.PhoneNumber" class='EditProfileInput'/>
+                        <input class="AddButton" onclick="Listener()" id="field" type="submit" value="Save Edits"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+    </div>

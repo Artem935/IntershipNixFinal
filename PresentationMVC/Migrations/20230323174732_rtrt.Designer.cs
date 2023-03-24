@@ -12,8 +12,8 @@ using PresentationMVC.Data;
 namespace PresentationMVC.Migrations
 {
     [DbContext(typeof(PresantationMVCDbContext))]
-    [Migration("20230313160944_Intial")]
-    partial class Intial
+    [Migration("20230323174732_rtrt")]
+    partial class rtrt
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

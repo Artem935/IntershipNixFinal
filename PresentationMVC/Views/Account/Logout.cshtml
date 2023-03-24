@@ -1,9 +1,15 @@
-﻿<div class="RegistrationWindow">
-    <div class="row">
-        <input type="submit"  class='LogInButton' value='Login'/>
-        <button  type="Button"  class='RegButton' >
-            <a asp-controller="Account" asp-action="Registration">Registrate</a>
-        </button>
+﻿<div class="RegistrationWindow" style="height:250px; margin-top:13%;">
+    <div class="row" style="text-align:center; color:white; padding-top:1em;">
+        <h1>
+            Exit done !
+        </h1>
+        
+        <form method="get" action="../Views/Account/Login.cshtml">
+               <input type="submit" asp-controller="Account" asp-action="Login"  class='LogInButton' value='Login' style="margin-left:0;"/>
+       </form>
+       <form method="get" action="../Views/Account/Registration.cshtml">
+              <input type="submit" asp-controller="Account" asp-action="Registration"   class='LogInButton' value='Registration' style="margin-left:0;"/>
+       </form>
     </div>
 </div>
    
