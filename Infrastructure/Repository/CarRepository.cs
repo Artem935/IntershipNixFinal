@@ -15,7 +15,7 @@ namespace Data.Repository
 
         public void Add(Car car)
         {
-            _context.Add(car);
+            _context.Cars.Add(car);
             _context.SaveChanges();
         }
 
@@ -26,13 +26,13 @@ namespace Data.Repository
 
         public void Overwriting(Car car)
         {
-            _context.Update(car);
+            _context.Cars.Update(car);
             _context.SaveChanges();
         }
 
         public void Remove(Car car)
         {
-            _context.Remove(car);
+            _context.Cars.Remove(car);
             _context.SaveChanges();
         }
     }

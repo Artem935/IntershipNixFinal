@@ -51,7 +51,7 @@ namespace PresentationMVC.Controllers
                     }
                 }
             }
-            return View();
+            return Redirect("YourAds");
         }
         public IActionResult YourAds(Menu menu, int page,int carDelite, int carEdit)
         {

@@ -3,7 +3,8 @@ using Aplication.Interfaces;
 using Aplication.Services;
 using Domain.Interfaces;
 using Data.Repository;
-
+using Aplication.Intarfaces;
+using Domain.Interfeces;
 
 namespace IoC
 {
@@ -14,11 +15,10 @@ namespace IoC
             //Car
             services.AddScoped<ICarServices, CarServices>();
             services.AddScoped<ICarRepository, CarRepository>();
-
-/*            //User
+            //User
             services.AddScoped<IUserServices, UserServices>();
             services.AddScoped<IUserRepository, UserRepository>();
-*/
+
 
         }
     }

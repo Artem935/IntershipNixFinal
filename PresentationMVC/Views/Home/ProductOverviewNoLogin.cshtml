@@ -1,0 +1,69 @@
+﻿
+@model ProductOwerviewModel
+<form method="get">
+@Html.Partial("~/Views/Header/Header.cshtml")
+
+    <div class="container">
+        <div class="row" style="margin-top:1em;">            
+            <div class="col-12 col-md-3">
+                <div class="menu">
+                    <div class="row">
+                            <img src="~/img/Add/AddFoto.png" class='ImportFoto'></img>                        
+                    </div>
+                </div>
+            </div>
+                <div class="col-12  col-md-9">
+                <div class="OverviewProduct">
+                    <div class="col-md-9">
+                        <p class="Name">@Model.Car.Brand @Model.Car.Model </p>
+                        <p class="Price">20000$</p> 
+                    </div>
+                    <div class="col-md-9">
+                        <div class="NameSelect">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="LabelProperty">Mileage</p>
+                                    <p class="LabelProperty">Year of issue</p>
+                                    <p class="LabelProperty">Gearbox type</p>
+                                    <p class="LabelProperty">Fuel type</p>
+                                    <p class="LabelProperty">Color</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="Property"> @(Model.Car.CarMileage / 1000) thausand km</p>
+                                    <p class="Property">@Model.Car.YearOfManufacture</p>
+                                    <p class="Property">@Model.Car.GearboxType</p>
+                                    <p class="Property">@Model.Car.FuelType, @Model.Car.EngineCapacity liters</p>
+                                    <p class="Property">@Model.Car.Color</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <p class="DescriptionP">Description</p>
+                        <textarea  cols="30" rows="3" class="Description" readOnly>@Model.Car.Description</textarea>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="UserContact">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p class="UserName">@Model.User.Name</p>
+                                    <p>12 продуктов</p>
+                                </div>
+                                <div class="col-md-8">  
+                                    <input type="button"  value="xxx xxx xxx" class='OverviewPhoneNumber' readOnly/>
+                                    <input type="submit" name="call"  value="Call" class='OverviewButtonShowNumber' readOnly/>
+                                </div>
+                            </div>
+                        </div>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+

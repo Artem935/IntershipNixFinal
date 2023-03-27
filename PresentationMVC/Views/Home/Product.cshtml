@@ -1,5 +1,6 @@
 ﻿
 
+
 @foreach (var item in Model.Cars)
 {
     <div class="Profile">
@@ -23,7 +24,7 @@
                                         <img class="IcoFoto" src="~/img/Product/Distance.png" alt="wwfwf"/>
                                     </div>
                                     <div class="col-md-8">
-                                            <p>@item.CarMileage k km</p>
+                                            <p>@item.CarMileage km</p>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -54,6 +55,7 @@
                                 </div>
                             </div>
                         </div>
+                            <p class="LabelProperty" style="font-size:18px;position:fixed; padding-bottom:0.5em; ">Year of issue: @item.YearOfManufacture</p>
                     </div>
                 </div> 
                 <div class="col-md-2">

@@ -12,5 +12,6 @@ namespace Data.Context
             /*Database.EnsureDeleted();*/
         }
         public DbSet<Car> Cars { get; set; }
+        public DbSet<User> ShopUsers { get; set; }
     }
 }

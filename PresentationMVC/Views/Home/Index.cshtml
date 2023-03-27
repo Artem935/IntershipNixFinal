@@ -1,5 +1,4 @@
 ﻿@model HomeViewModel
-
 @Html.Partial("~/Views/Header/Header.cshtml")
 <div class="container">
     <form method="get">
@@ -23,12 +22,12 @@
                 <div class="row">
                         @if (Model.Pager.TotalPage > 0)
                         {
-                                @for (var i = Model.Pager.StartPage; i <= Model.Pager.EndPage; i++)
-                                {
-                                    <div class="col-md-1" >
-                                        <input onclick="Listener" name="page" type="submit" value="@i" />
-                                    </div>       
-                                }
+                            @for (var i = Model.Pager.StartPage; i <= Model.Pager.EndPage; i++)
+                            {
+                                <div class="col-md-1" >
+                                    <input onclick="Listener" name="page" type="submit" value="@i" />
+                                </div>       
+                            }
                         }
                 </div>
             </div>

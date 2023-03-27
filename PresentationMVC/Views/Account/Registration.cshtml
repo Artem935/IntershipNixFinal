@@ -1,4 +1,5 @@
-﻿
+﻿@using Domain.Models
+
 @model User
 
 
@@ -17,7 +18,7 @@
                         <input asp-for="PhoneNumber" class='RegistrateInput' type="number" placeholder='Fone number'/>
                     </div>
                     <div class="col-md-5 ">
-                        <input asp-for="date" class='RegistrateInput' type="date"  />
+                        <input asp-for="Bursday" class='RegistrateInput' type="date"  />
                     </div>
                 </div>
                 <div class="row">
@@ -34,7 +35,7 @@
                         <input class='RegistrateInput'  asp-for="Password" type="password" placeholder='Password' />
                     </div>
                     <div class="col-md-5 ">
-                        <input class='RegistrateInput' asp-for="ComfirmPassword" type="password" placeholder='ConfirmPassword' />
+                        <input class='RegistrateInput' asp-for="ConfirmPassword" type="password" placeholder='ConfirmPassword' />
                     </div>
                 </div>
                         <div class="row">

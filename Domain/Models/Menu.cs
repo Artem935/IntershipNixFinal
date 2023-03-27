@@ -3,6 +3,7 @@ namespace Domain.Models
 {
     public class Menu
     {
+
         public int? PriceMax { get; set; }
         public int? PriceMin { get; set; }
         public string? Searc { get; set; }

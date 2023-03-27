@@ -413,7 +413,7 @@ main {
 
 
 
-.AddProduct .AddProductInput, .ProductOwerview {
+.AddProduct .AddProductInput, .ProductOwerview, .ProductOwerview1 {
     width: 30%;
     height: 2em;
     font-size: 18px;
@@ -431,14 +431,65 @@ main {
 .ProductOwerview {
     margin-top:1em ;
 }
-.AddProduct .AddProductInput::-webkit-outer-spin-button,
-.AddProduct .AddProductInput::-webkit-inner-spin-button,
-.ProductOwerview::-webkit-outer-spin-button,
-.ProductOwerview::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+
+
+.UserContact {
+    width: 90%;
+    background-color: #dedede;
+    margin-top: 1em;
+    margin-left: 1em;
+    border-radius: 1em;
+    padding-left:2em;
 }
+.UserContact .UserName {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top:1em;
+    margin-bottom:0;
+}
+.UserContact .OverviewPhoneNumber {
+    color: black;
+    width: 45%;
+    height: 2em;
+    font-size: 18px;
+    border-radius: 3px;
+    color: black;
+    background-color: #f2f2f2;
+    margin-top: 2.1em;
+    border: 0;
+    outline: none;
+}
+    .UserContact .OverviewButtonShowNumber {
+        width: 20%;
+        color: black;
+        height: 2em;
+        font-size: 18px;
+        border-radius: 3px;
+        margin-left: 5px;
+        color: black;
+        background-color: #f2f2f2;
+        margin-top: 2.1em;
+        border: 0;
+        outline: none;
+        transition: 1s;
+    }
+    .UserContact .OverviewButtonShowNumber:hover {
+        transition: 1s;
+        color: rgb(231, 231, 231);
+        background-color: #766db4;
+        transition: 1s;
+    }
+.ProductOwerview1 {
+    margin-top: 0em;
+}
+    .AddProduct .AddProductInput::-webkit-outer-spin-button,
+    .AddProduct .AddProductInput::-webkit-inner-spin-button,
+    .ProductOwerview::-webkit-outer-spin-button,
+    .ProductOwerview::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
 
 .AddProduct .AddProductInput::-webkit-input-placeholder,
 .ProductOwerview::-webkit-input-placeholder {
@@ -525,17 +576,83 @@ main {
         background-color: #bdd7df;
     }
 
+.OverviewProduct .Name {
+    margin-left: 0.9em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    font-size: 26px;
+    font-family: Arial,sans-serif;
+}
+
+.OverviewProduct .Price {
+    margin-left: 1em;
+    font-size: 22px;
+    color: #008337;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: Arial,sans-serif;
+}
+
+.OverviewProduct .Property {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-family: Arial,sans-serif;
+}
+
+.OverviewProduct .LabelProperty {
+    margin-left: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-family: Arial,sans-serif;
+}
+
+.OverviewProduct .DescriptionP {
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.OverviewProduct .Description,
+.OverviewProduct .Description:hover {
+    font-family: Nunito;
+    font-size: 18px;
+    padding: 0.5em;
+    border-bottom: 0.1em solid #f2f2f2;
+    border-radius: 15px;
+    width: 90%;
+    height: 10em;
+    margin-left: 1em;
+    resize: none;
+    border-width: 0;
+}
+
+.OverviewProduct .AddButton {
+    margin-top: 1em;
+    margin-left: 1em;
+    background-color: #f2f2f2;
+    height: 2em;
+    width: 10em;
+    font-size: 18px;
+    border-radius: 5px;
+    border-width: 0;
+    float: left;
+}
+.OverviewProduct .AddButton:hover 
+{
+    background-color: #bdd7df;
+}
 /* /////////////////////// */
 .Scroll .row {
     padding-top: 1em;
     padding-left: 10%;
 }
-
 .Scroll .col-md-1 {
     padding: 0;
     width: 2.5em;
 }
-
 .Scroll input {
     font-size: 18px;
     border-radius: 10px;
@@ -544,14 +661,15 @@ main {
     width: 2em;
     transition: linear .3s;
 }
-    .Scroll input .active {
-        background-color: rgb(187, 219, 229);
-    }
-
-    .Scroll input:hover {
-        background-color: rgb(187, 219, 229);
-        transition: linear .3s;
-    }
+.Scroll input .active 
+{
+    background-color: rgb(187, 219, 229);
+}
+.Scroll input:hover 
+{
+    background-color: rgb(187, 219, 229);
+    transition: linear .3s;
+}
 
 
 
@@ -560,11 +678,13 @@ main {
 .CategoryBtn2,
 .SelectedCategoryBtn2,
 .SelectedCategoryBtn,
-.CategoryBtn {
+.CategoryBtn 
+{
     width: 100px;
 }
 
-.YourAds {
+.YourAds 
+{
     color: #8c8c8c;
     text-decoration: none;
     font-family: Nunito;
