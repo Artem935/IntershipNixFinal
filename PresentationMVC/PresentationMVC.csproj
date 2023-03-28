@@ -33,4 +33,11 @@
     <ProjectReference Include="..\IoC\IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Category\Category3.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -10,6 +10,7 @@ using System.Linq;
 using PresentationMVC.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace PresentationMVC.Controllers
 {
@@ -29,16 +30,41 @@ namespace PresentationMVC.Controllers
             _presentationContext = PresentationContext;
         }
         [HttpGet]
-        public IActionResult Index(Menu menu, int page, int carID)
+        public IActionResult Index(Menu menu, int page, int carID, int like)
         {
-            if (carID != 0)
-            {
-
-                return RedirectToAction("ProductOverview", new { carID });
-            }
             int pageSize = 3; // количество объектов на страницу
+            if (carID != 0)
+                return RedirectToAction("ProductOverview", new { carID });
             if (page < 1)
                 page = 1;
+
+            if (like != 0)
+            {
+                if (HttpContext.Session.GetString("UserId") == null)
+                    return RedirectToAction("Login", "Account");
+
+                Liked liked = new Liked();
+                liked.CarId = like;
+                liked.UserId = HttpContext.Session.GetString("UserId");
+                if (_shopContext.LikedCar.Count() != 0)
+                {
+                    int? LikedCarID;
+                    try
+                    {
+                        LikedCarID = _shopContext.LikedCar.FirstOrDefault(p => p.UserId == HttpContext.Session.GetString("UserId")).CarId;
+                    }
+                    catch (Exception e)
+                    {
+                        LikedCarID = 0;
+                    }
+                    if (LikedCarID != like)
+                    {
+                        _shopContext.LikedCar.Add(liked);
+                        _shopContext.SaveChanges();
+                    }
+                }
+            }
+
             IEnumerable<Car> cars = _shopContext.Cars;
             cars = new FilterByMenu().CarFilter(cars, menu);
             int recsCount = cars.Count();
@@ -46,7 +72,8 @@ namespace PresentationMVC.Controllers
             int recSkip = (page - 1) * pageSize;
             cars = cars.Skip(recSkip).Take(pager.PageSize);
             ViewBag.Pager = page;
-            HomeViewModel ivn = new HomeViewModel(cars, menu, pager);
+            IEnumerable <Picture> picture =  _shopContext.Picture;
+            HomeViewModel ivn = new HomeViewModel(cars, menu, pager, picture);
             return View(ivn);
         }
         public IActionResult Menu(Menu model)
@@ -57,8 +84,10 @@ namespace PresentationMVC.Controllers
         {
             Car cars = _shopContext.Cars.FirstOrDefault(p => p.Id == carID);
             IdentityUser identityUser = _presentationContext.Users.FirstOrDefault(p => p.Id == cars.UserId);
-            User user = _shopContext.ShopUsers.FirstOrDefault(p => p.UserId == identityUser.Id);
-            ProductOwerviewModel pom = new ProductOwerviewModel(cars, user);  
+            User user = _shopContext.Users.FirstOrDefault(p => p.UserId == identityUser.Id);
+            int countProducts = _shopContext.Cars.Where(p => p.UserId == identityUser.Id).Count();
+            IEnumerable<Picture> picture = _shopContext.Picture;
+            ProductOwerviewModel pom = new ProductOwerviewModel(cars, user, countProducts, picture);
             if (HttpContext.Session.GetString("UserId") == null)
                 return RedirectToAction("ProductOverviewNoLogin", new { carID });
             return View(pom);
@@ -69,8 +98,10 @@ namespace PresentationMVC.Controllers
             {
                 Car cars = _shopContext.Cars.FirstOrDefault(p => p.Id == carID);
                 IdentityUser identityUser = _presentationContext.Users.FirstOrDefault(p => p.Id == cars.UserId);
-                User user = _shopContext.ShopUsers.FirstOrDefault(p => p.UserId == identityUser.Id);
-                ProductOwerviewModel pom = new ProductOwerviewModel(cars, user);
+                User user = _shopContext.Users.FirstOrDefault(p => p.UserId == identityUser.Id);
+                int countProducts = _shopContext.Cars.Where(p => p.UserId == identityUser.Id).Count();
+                IEnumerable<Picture> picture = _shopContext.Picture;
+                ProductOwerviewModel pom = new ProductOwerviewModel(cars, user, countProducts, picture);
                 return View(pom);
             }
             return RedirectToAction("Login", "Account");

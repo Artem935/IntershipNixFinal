@@ -1,25 +1,25 @@
 ﻿
 @using Domain.Models;
-@model Car
+@model AddCarModel
 @Html.Partial("~/Views/Header/Header.cshtml")
 
     <div class="container">
-    @Html.Partial("Category")
-    <form method="post"> 
+    @Html.Partial("~/Views/Category/Category4.cshtml")
+    <form method="post" enctype="multipart/form-data" > 
         <div class="row">            
             <div class="col-12 col-md-3">
                 <div class="menu">
                     
                     <div class="row">
-                            <img src="~/img/Add/AddFoto.png" class='ImportFoto'></img>                        
+                            <input name="TakeImage" class='ImportFoto'  type="file" id="Example"/>  
                     </div>
                 </div>
             </div>
             <div class="col-12  col-md-9">
                 <div class="AddProduct">
                     <div class="col-md-9">
-                        <input asp-for="Brand" type="text" placeholder='Brand' class='AddProductInput'/>
-                        <input asp-for="Model" type="text" placeholder='Model' class='AddProductInput'/>
+                        <input asp-for="@Model.Car.Brand" type="text" placeholder='Brand' class='AddProductInput'/>
+                        <input asp-for="@Model.Car.Model" type="text" placeholder='Model' class='AddProductInput'/>
                     </div>
                     <div class="col-md-9">
                         <div class="NameSelect">
@@ -37,17 +37,17 @@
                         </div>
                     </div>
                     <div class="col-md-9">
-                        <select asp-for="GearboxType" class="custom-select">
+                        <select asp-for="@Model.Car.GearboxType" class="custom-select">
                             <option value="Mechanic">Mechanic</option>
                             <option value="Automatic">Automatic</option>
                         </select>
-                        <select asp-for="FuelType"    class="custom-select">
+                        <select asp-for="@Model.Car.FuelType"    class="custom-select">
                             <option value="Petrol">Petrol</option>
                             <option value="Disel">Disel</option>
                             <option value="Electric">Electric</option>
                             <option value="Gibrid">Gibrid</option>
                         </select>
-                        <select asp-for="Color" class="custom-select" >
+                        <select asp-for="@Model.Car.Color" class="custom-select" >
                             <option value="Black">Black</option>
                             <option value="Red">Red</option>
                             <option value="Pink">Pink</option>
@@ -55,14 +55,14 @@
                         </select>
                     </div>
                     <div class="col-md-9">
-                        <input asp-for="YearOfManufacture" type="number" placeholder='Year of issue' class='AddProductInput'/>
-                        <input asp-for="CarMileage" type="number" placeholder='Mileage' class='AddProductInput'/>
-                        <input asp-for="Price" type="number"  placeholder='Price $' class='AddProductInput' id="Price"/>
+                        <input asp-for="@Model.Car.YearOfManufacture" type="number" placeholder='Year of issue' class='AddProductInput'/>
+                        <input asp-for="@Model.Car.CarMileage" type="number" placeholder='Mileage' class='AddProductInput'/>
+                        <input asp-for="@Model.Car.Price" type="number"  placeholder='Price $' class='AddProductInput' id="Price"/>
 
                     </div>
                     <div class="col-md-9">
                         <p  class="AddDescriptionP">Description</p>
-                        <textarea asp-for="Description" cols="30" rows="3" class="AddDescription"></textarea>
+                        <textarea asp-for="@Model.Car.Description" cols="30" rows="3" class="AddDescription"></textarea>
                     </div>
                     <div class="col-md-9">
                         <input class="AddButton" onclick="Listener()" id="field" type="submit" value="Publish"/>

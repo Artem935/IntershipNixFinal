@@ -15,9 +15,10 @@
                             <div class="DropdownContent">
                                 <a   asp-controller="Product" asp-action="YourAds" > <img src="~/img/Header/document.png" class='IcoBurgerMenu1'/>Your Ads</a>
                                 <a> <img src="~/img/Header/News.png" class='IcoBurgerMenu'/> The news</a>
-                                <a> <img src="~/img/Header/Like.png" class='IcoBurgerMenu'/> Liked</a>
+                                <a asp-controller="Product" asp-action="LikedAds">  <img src="~/img/Header/Like.png" class='IcoBurgerMenu'/> Liked</a>
                                 <a asp-controller="Account" asp-action="Profile"> <img src="~/img/Header/Profile.png" class='IcoBurgerMenu1'/> Profile</a>
                                 <a asp-controller="Account" asp-action="Logout"> <img src="~/img/Header/Logout.png" class='IcoBurgerMenu'/> Exit</a>
+                            
                             </div>
                         </div>
                         <button   class='AddProductBut'>

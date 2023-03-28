@@ -1,42 +1,46 @@
 ﻿@using Domain.Models;
 @model HomeViewModel
+
 @Html.Partial("~/Views/Header/Header.cshtml")
 
 
 <div class="container">
-    @Html.Partial("~/Views/Category/Category1.cshtml")
+    @Html.Partial("~/Views/Category/Category3.cshtml")
     <form method="get">
         <div class="row">
                 @Html.Partial("~/Views/Home/Menu.cshtml")
                 <div class="col-12  col-md-9">
                     <div class="product">
-                        @foreach (var item in Model.Cars)
+                        @foreach (var i in ViewBag.Model)
                         {
-                            <div class="Profile">
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-4">
+                            @foreach (var item in Model.Cars.Where(p => p.Id == i.CarId))
+                            {
+                                <div class="Profile">
+                                    <div class="col-md-9">
+                                        <div class="row">
+                                            <div class="col-md-4">
                                             @Html.Raw("<img class='CarFotoAds' src=\"data:image/jpeg;base64," 
-                                                + Convert.ToBase64String(Model.Picture.FirstOrDefault(p => p.CarId == item.Id).Image) + "\" />")
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p class='Title'>@item.Brand @item.Model</p>
-                                            <div class='DescriptionBLock'>
-                                                <p class='Description'>
-                                                    @item.Description
-                                                </p>
+                                            + Convert.ToBase64String(Model.Picture.FirstOrDefault(p => p.CarId == item.Id).Image) + "\" />")
                                             </div>
-                                        </div> 
-                                        <div class="col-md-2">
-                                            <row>
+                                            <div class="col-md-6">
+                                                <p class='Title'>@item.Brand @item.Model</p>
+                                                <div class='DescriptionBLock'>
+                                                    <p class='Description'>
+                                                @item.Description
+                                                    </p>
+                                                </div>
+                                            </div> 
+                                            <div class="col-md-2">
+                                                <row>
                                                     <input type="submit" class='OrderSettingsDelite'  src="~/img/Profile/Edit.png" name="carDelite"  value="@item.Id">
-                                                    <input type="submit" class='OrderSettingsEdit'  src="~/img/Profile/Delete.png" name="carEdit" placeholder="" value="@item.Id">                                                
-                                            </row>
-                                        </div>    
+                                                </row>
+                                            </div>    
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            }
                         }
+                        
                     </div>
                 </div>
                 <div class="col-md-6 offset-md-6">

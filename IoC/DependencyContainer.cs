@@ -18,6 +18,9 @@ namespace IoC
             //User
             services.AddScoped<IUserServices, UserServices>();
             services.AddScoped<IUserRepository, UserRepository>();
+            //Picture
+            services.AddScoped<IPictureServices, PictureServices>();
+            services.AddScoped<IPictureRepository, PictureRepository>();
 
 
         }

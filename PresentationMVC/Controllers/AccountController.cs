@@ -14,7 +14,6 @@ using Aplication.Intarfaces;
 
 namespace PresentationMVC.Controllers
 {
-
     public class AccountController : Controller
     {
         private readonly UserManager<IdentityUser> _userManager;
@@ -22,7 +21,6 @@ namespace PresentationMVC.Controllers
         private readonly ILogger<AccountController> _logger;
         private PresantationMVCDbContext _presentationContext;
         private IUserServices _userServices;
-
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager,
             ILogger<AccountController> logger, PresantationMVCDbContext presentationContext, IUserServices userServices)
         {
@@ -32,8 +30,6 @@ namespace PresentationMVC.Controllers
             _presentationContext = presentationContext;
             _userServices = userServices;
         }
-
-        [HttpGet]
         public IActionResult Registration()
         {
             return View();
@@ -54,17 +50,14 @@ namespace PresentationMVC.Controllers
                         return RedirectToAction("Login", "Account");
                     }
             }
-            foreach (var item in ModelState)
+            else
             {
-                foreach (var a in item.Value.Errors)
-                {
-                    _logger.LogError(a.ErrorMessage);
-                }
+                foreach (var item in ModelState)
+                    foreach (var a in item.Value.Errors)
+                        _logger.LogError(a.ErrorMessage);
             }
             return View();
         }
-
-        [HttpGet]
         public async Task<IActionResult> Login()
         {
             return View();
@@ -96,7 +89,6 @@ namespace PresentationMVC.Controllers
             string s = HttpContext.Session.GetString("UserId");
             if (HttpContext.Session.GetString("UserId") == null)
                 return RedirectToAction("Login", "Account");
-
             return View(_presentationContext.Users.FirstOrDefault(p => p.Id == HttpContext.Session.GetString("UserId")));
         }
         [HttpPost]
@@ -109,7 +101,6 @@ namespace PresentationMVC.Controllers
             user.UserName= identity.UserName;
             user.Email= identity.Email;
             user.PhoneNumber= identity.PhoneNumber;
-
             _userManager.UpdateAsync(user);
             _presentationContext.SaveChanges();
             return View(user);

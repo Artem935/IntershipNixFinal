@@ -360,11 +360,9 @@ main {
 
 .product .CarFoto {
     max-width: 100%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 1em;
+}
+.product .imageContainer {
+    max-width: 400px;
 }
 
 .product .IcoFoto {
@@ -403,12 +401,21 @@ main {
 }
 
 .product .LikeBtn {
+
+    background-image: url(../img/Product/like.png);
+    background-repeat: no-repeat;
+    background-size:1.8em;
+    border-width: 0;
+    background-color: white;
     max-width: 50%;
     height: 2.5em;
-    margin-top: 100%;
+    margin-top: 75%;
     margin-left: 65%;
+    width:30px;
     display: block;
-    padding-top: 1em;
+    padding-top:1.5em;
+    color:white;
+    
 }
 
 
@@ -777,10 +784,17 @@ main {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 0.5em;
-    margin: 0;
+    padding-bottom: 1em;
 }
-
+.CarFotoAds {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.1em;
+    padding-bottom: 1.1em;
+}
 .Profile .IcoFoto {
     width: 1.5em;
 }
@@ -817,7 +831,7 @@ main {
 }
 
     .DescriptionBLock {
-        height: 5em;
+        height: 70%;
         overflow: hidden; /* Обрезаем все, что не помещается в область */
         text-overflow: ellipsis; /* Добавляем многоточие */
     }
@@ -843,14 +857,16 @@ main {
 }
 
 .ImportFoto {
-    max-width: 100%;
+    background-image: url(../img/Add/AddFoto.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
     border-radius: 15px;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
     background-color: #f2f2f2;
-    padding: 5em;
+    padding: 100% 5% 5% 5%;
     margin: 0;
 }
 
@@ -862,7 +878,7 @@ main {
         margin-left: auto;
         margin-right: auto;
         background-color: #dedede;
-        padding: 5em;
+        padding: 100% 5% 5% 5%;
         margin: 0;
     }
 /*////////////////////////////////////////*/
