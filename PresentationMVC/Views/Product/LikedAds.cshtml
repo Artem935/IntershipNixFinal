@@ -23,12 +23,15 @@
                                             + Convert.ToBase64String(Model.Picture.FirstOrDefault(p => p.CarId == item.Id).Image) + "\" />")
                                             </div>
                                             <div class="col-md-6">
-                                                <p class='Title'>@item.Brand @item.Model</p>
-                                                <div class='DescriptionBLock'>
-                                                    <p class='Description'>
-                                                @item.Description
-                                                    </p>
-                                                </div>
+                                                <div class="row">
+@*                                                        <p class="Title"><button asp-action="ProductOverview" asp-controller="Home"  class="ProdutBrandBnt"  type="submit" name="carID" value="@item.Id">@item.Brand @item.Model</button>  </p>*@
+                                                                <p class='Title'>@item.Brand @item.Model</p>
+                                                 </div>
+                                                    <div class='DescriptionBLock'>
+                                                        <p class='Description'>
+                                                            @item.Description
+                                                        </p>
+                                                    </div>
                                             </div> 
                                             <div class="col-md-2">
                                                 <row>
@@ -61,3 +64,4 @@
          </div>
      </form>
 </div>
+@Html.Partial("~/Views/Footer/Footer.cshtml")
