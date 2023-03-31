@@ -30,10 +30,11 @@ namespace Data.Repository
             _context.SaveChanges();
         }
 
-        public void Remove(Car car)
+        public bool Remove(Car car)
         {
             _context.Cars.Remove(car);
             _context.SaveChanges();
+            return true;
         }
     }
 }

@@ -12,6 +12,7 @@ namespace IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
+
             //Car
             services.AddScoped<ICarServices, CarServices>();
             services.AddScoped<ICarRepository, CarRepository>();

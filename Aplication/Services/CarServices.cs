@@ -24,9 +24,11 @@ namespace Aplication.Services
             };
         }
 
-        public void Remove(Car car)
+        public bool Remove(Car car)
         {
             _carRepository.Remove(car);
+
+            return true;
         }
 
         public void Overwriting(Car car)

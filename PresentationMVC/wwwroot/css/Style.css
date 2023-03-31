@@ -1,5 +1,7 @@
-@font-face{
-
+@font-face {
+    font-family: "Nunito";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
 }
 
 ::-webkit-scrollbar {
@@ -27,7 +29,6 @@ a {
     header {
     background-color: rgb(0, 82, 107);
     padding: 1em;
-    margin-bottom:1em;
 }
 
 .DeliteInput {
@@ -485,14 +486,15 @@ main {
 .ProductOwerview1 {
     margin-top: 0em;
 }
-    .AddProduct .AddProductInput::-webkit-outer-spin-button,
-    .AddProduct .AddProductInput::-webkit-inner-spin-button,
-    .ProductOwerview::-webkit-outer-spin-button,
-    .ProductOwerview::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    }
+
+.AddProduct .AddProductInput::-webkit-outer-spin-button,
+.AddProduct .AddProductInput::-webkit-inner-spin-button,
+.ProductOwerview::-webkit-outer-spin-button,
+.ProductOwerview::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 
 .AddProduct .AddProductInput::-webkit-input-placeholder,
 .ProductOwerview::-webkit-input-placeholder {
@@ -718,12 +720,12 @@ main {
     transition: linear 0.2s;
 }
 
-    .CategoryBtn:hover,
-    .CategoryBtn2:hover {
-        transition: linear 0.5s;
-        border-bottom: 0.15em solid rgb(46, 46, 46);
-        color: #000000;
-    }
+.CategoryBtn:hover,
+.CategoryBtn2:hover {
+    transition: linear 0.5s;
+    border-bottom: 0.15em solid rgb(46, 46, 46);
+    color: #000000;
+}
 
 .YourAds:hover {
     transition: linear 0.5s;
@@ -826,11 +828,11 @@ main {
     background-image: url(../img/Profile/Edit.png);
 }
 
-    .DescriptionBLock {
-        height: 70%;
-        overflow: scroll; /* Обрезаем все, что не помещается в область */
-        text-overflow: ellipsis; /* Добавляем многоточие */
-    }
+.DescriptionBLock {
+    height: 70%;
+    overflow: scroll; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
 
 .Description {
     height: 5em;

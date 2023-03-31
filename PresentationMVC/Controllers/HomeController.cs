@@ -42,26 +42,27 @@ namespace PresentationMVC.Controllers
             {
                 if (HttpContext.Session.GetString("UserId") == null)
                     return RedirectToAction("Login", "Account");
-
+                IEnumerable<Liked> Likedcar = _shopContext.LikedCar; 
                 Liked liked = new Liked();
                 liked.CarId = like;
                 liked.UserId = HttpContext.Session.GetString("UserId");
-                if (_shopContext.LikedCar.Count() != 0)
+                int? LikedCarID;
+                try
                 {
-                    int? LikedCarID;
-                    try
-                    {
-                        LikedCarID = _shopContext.LikedCar.FirstOrDefault(p => p.UserId == HttpContext.Session.GetString("UserId")).CarId;
-                    }
-                    catch (Exception e)
-                    {
-                        LikedCarID = 0;
-                    }
-                    if (LikedCarID != like)
-                    {
-                        _shopContext.LikedCar.Add(liked);
-                        _shopContext.SaveChanges();
-                    }
+                    Likedcar = _shopContext.LikedCar.Where(p => p.UserId == HttpContext.Session.GetString("UserId"));
+                }
+                catch (Exception e)
+                {
+                    LikedCarID = 0;
+                }
+                bool chek = true;
+                foreach (var item in Likedcar) 
+                    if (item.CarId == like)
+                        chek = false;
+                if (chek)
+                {
+                    _shopContext.LikedCar.Add(liked);
+                    _shopContext.SaveChanges();
                 }
             }
 

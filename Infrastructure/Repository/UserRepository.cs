@@ -19,22 +19,25 @@ namespace Data.Repository
 
             _context = context;
         }
-        public void Add(User user)
+        public bool Add(User user)
         {
             _context.Users.Add(user);
             _context.SaveChanges();
+            return true;
         }
 
-        public void Overwriting(User user)
+        public bool Overwriting(User user)
         {
             _context.Users.Update(user);
             _context.SaveChanges();
+            return true;
         }
 
-        public void Remove(User user)
+        public bool Remove(User user)
         {
             _context.Users.Remove(user);
             _context.SaveChanges();
+            return true;
         }
     }
 }

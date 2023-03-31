@@ -19,19 +19,22 @@ namespace Aplication.Services
         {
             _userRepository = carRepository;
         }
-        public void Add(User user)
+        public bool Add(User user)
         {
             _userRepository.Add(user);
+            return true;
         }
 
-        public void Remove(User user)
+        public bool Remove(User user)
         {
             _userRepository.Remove(user);
+            return true;
         }
 
-        public void Overwriting(User user)
+        public bool Overwriting(User user)
         {
             _userRepository.Overwriting(user);
+            return true;
         }
     }
 }

@@ -71,7 +71,7 @@ namespace PresentationMVC.Controllers
             int pageSize = 3; // количество объектов на страницу
             if (page < 1)
                 page = 1;
-            IEnumerable<Car> cars = _context.Cars;
+             IEnumerable<Car> cars = _context.Cars;
             cars = new FilterByMenu().CarFilter(cars, menu);
             int recsCount = cars.Count();
             var pager = new Pager(recsCount, page, pageSize);
@@ -130,7 +130,7 @@ namespace PresentationMVC.Controllers
 
             cars = new FilterByMenu().CarFilter(cars, menu);
             var pager = new Pager(cars.Count(), page, pageSize);
-            cars = cars.Skip((page - 1) * pageSize).Take(pager.PageSize).Where(p => p.UserId == UserId);
+            cars = cars.Skip((page - 1) * pageSize).Take(pager.PageSize);
             IEnumerable<Picture> pictures = _context.Picture;
             HomeViewModel ivn = new HomeViewModel(cars, menu, pager, pictures);
             if (carDelite != 0)

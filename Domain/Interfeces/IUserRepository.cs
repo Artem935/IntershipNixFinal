@@ -9,9 +9,9 @@ namespace Domain.Interfeces
 {
     public interface IUserRepository
     {
-        public void Add(User user);
-        public void Remove(User user);
+        public bool Add(User user);
+        public bool Remove(User user);
 
-        public void Overwriting(User user);
+        public bool Overwriting(User user);
     }
 }
